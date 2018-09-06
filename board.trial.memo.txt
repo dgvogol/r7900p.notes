@@ -1,0 +1,11 @@
+  TRIAL ON R7900P BOARD
+=========================
+01. useful information:
+    (a) https://www.myopenrouter.com/article/how-set-serial-console-netgear-r8000
+        serial port connection on R8000 model, not the same board, just for reference
+    
+    (b) https://wiki.openwrt.org/doc/techref/bootloader/cfe
+        about the CFE environment, reference only
+
+    (c) https://github.com/RMerl/asuswrt-merlin.ng/tree/master/release/src-rt-5.02hnd/cfe
+        CFE source codes for ASUS routers, just for reference

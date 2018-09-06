@@ -1,0 +1,60 @@
+  BUILD ERROR FIX LOG
+=======================
+01. sudo apt install liblzo2-dev
+02. sudo apt install uuid-dev
+03. chmod +x hostTools/scripts/checkver.pl
+04. chmod +x hostTools/scripts/gendefconfig
+05. chmod +x hostTools/scripts/gendefconfig.d/*.conf
+06. sudo apt install libncurses5-dev
+07. sudo apt install flex
+08. cd userspace/public/apps/ipsec-tools/ipsec-tools-0.8.0/src/setkey
+    flex -o token.c token.l
+09. cd userspace/public/apps/ipsec-tools/ipsec-tools-0.8.0/src/racoon
+    flex -o cftoken.c cftoken.l
+10. sudo apt install bison
+11. cd userspace/ap/gpl/openvpn-2.3.10
+    touch .gitignore
+12. sudo apt install gperf
+13. cd userspace/ap/gpl/minidlna/libid3tag-0.15.0b
+    touch frametype.c
+    touch compat.c
+14. patch userspace/ap/gpl/timemachine/gdbm-1.8.3/gdbm.texinfo
+15. sudo apt install intltool
+16. sudo apt install prelink
+17. chmod +x hostTools/local_install/fakeroot
+18. chmod +x /workspace/r7900p/r7900p/hostTools/local_install/faked
+19. chmod +x /workspace/r7900p/r7900p/hostTools/mksquashfs
+20. chmod +x /workspace/r7900p/r7900p/hostTools/cmplzma
+21. chmod +x /workspace/r7900p/r7900p/hostTools/lzmacmd
+22. chmod +x /workspace/r7900p/r7900p/hostTools/mkfs.jffs2
+23. chmod +w /workspace/r7900p/r7900p/targets/R8000P/fstab
+24. chmod +x /workspace/r7900p/r7900p/hostTools/mtd-utils-20090606/mkfs.ubifs/mkfs.ubifs
+25. chmod +x /workspace/r7900p/r7900p/hostTools/mtd-utils-20090606/ubi-utils/ubinize
+26. chmod +x /workspace/r7900p/r7900p/hostTools/scripts/bcmImageMaker
+27. chmod +x /workspace/r7900p/r7900p/hostTools/packet
+28. chmod +x /workspace/r7900p/r7900p/hostTools/BcmFsTag
+29. chmod +x /workspace/r7900p/r7900p/hostTools/addvtoken
+30. chmod +x /workspace/r7900p/r7900p/hostTools/createimg.pl
+32. sudo apt install libdigest-crc-perl
+33. install local perl library using cpan
+33. patch makefile.common to use local perl library
+
+
+a0. initial build env setup
+    (1) top level build directory: /workspace/r7900p
+    (2) cd /workspace/r7900p
+        git clone --recursive git@github.com:RMerl/am-toolchains.git
+    (3) sudo ln -sf /workspace/r7900p/am-toolchains/brcm-arm-hnd /opt/toolchains
+    (4) make sure /bin/sh points to /bin/bash
+    (5) extract downloaded r7900p/r8000p source codes to /workspace/r7900p/r7900p
+    (6) switch to /workspace/r7900p/r7900p
+    (7) make PROFILE=R8000P
+
+b0. patched files:
+    [a0]. delete   ==> userspace/gpl/apps/atm2684/atm/lib/stdint.h
+    [a1]. patch    ==> userspace/ap/gpl/timemachine/gdbm-1.8.3/gdbm.texinfo
+    [a3]. patch    ==> makefile.common
+
+
+
+
